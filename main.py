@@ -14,11 +14,9 @@ confirm the prediction of the model.
 
 
 # Normalize data from [0, 255] to [0, 1] - matches format model was trained on
-training_images = training_images / 255.0
 test_images = test_images / 255.0
 
 # Add a channel for grayscale (Conv2D expects 3D input)
-training_images = training_images[..., tf.newaxis]
 test_images = test_images[..., tf.newaxis]
 
 # Load the trained model

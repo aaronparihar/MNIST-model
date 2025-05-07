@@ -42,10 +42,10 @@ model.compile(optimizer='adam',
               # Want to track accuracy of model
               metrics=['accuracy'])
 
-# Train model over 5 epochs (5 passes of training dataset)
-model.fit(training_images, training_labels, epochs=5, validation_data=(test_images, test_labels))
+# Train model over 5 epochs (5 passes of training dataset), validate over 20% of training data
+model.fit(training_images, training_labels, epochs=5, validation_split=0.2)
 
 # Save to a file
 model.save('mnist_model.keras')
 
-#Outputs 99% accuracy on test data
+# Outputs 98.97% accuracy on training data
